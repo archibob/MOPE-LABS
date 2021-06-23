@@ -1,4 +1,6 @@
 import numpy as np
+import time
+start_time = time.time()
 
 a0 = 1
 a1 = 2
@@ -57,4 +59,5 @@ for i in range(8):
 
 y = np.amin(y)
 print("Y = ", y)
+print("--- %s seconds ---" % (time.time() - start_time))
 
