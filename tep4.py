@@ -330,3 +330,14 @@ if __name__ == '__main__':
     y_min = 200 + int(sum([x[0] for x in x_range]) / 3)
 
     main(8, 3)
+    
+    start_time = timeit.default_timer()
+importance = student_criteria(m, N, y_arr, beta_coefficients)
+finish_time = timeit.default_timer()
+t2 = finish_time - start_time
+d = len(list(filter(None, importance)))
+start_time = timeit.default_timer()
+fisher_criteria(m, N, d, naturalized_factors_table, y_arr, beta_coefficients, importance)
+finish_time = timeit.default_timer()
+t3 = finish_time - start_time
+print("\nЧас виконання кожної статистичної перевірки: \nПеревірка за критерієм Кохрена - {} секунд \nПеревірка за критерієм Стьюдента - {} секунд \nПеревірка за критерієм Фішера - {} секунд".format(round(t1,5),round(t2,5),round(t3,5)))
