@@ -240,3 +240,12 @@ def main(n, m):
 
 if __name__ == '__main__':
     main(15, 3)
+       
+        
+print("Теоретичні значення y для різних комбінацій факторів:")
+print("\n".join(["{arr[0]}: y = {arr[1]}".format(arr=el) for el in theoreticalValsToPrint]))
+print("Fp = {}, Ft = {}".format(Fp, Ft))
+print("Fp < Ft => модель адекватна" if Fp < Ft else "Fp > Ft => модель неадекватна")
+#importance = [True, True, True, False] checking
+print("Fp < Ft => модель адекватна" if Fp < Ft or len([i for i in importance if i != False])!=1 else "Fp > Ft => модель неадекватна")
+return True if Fp < Ft else False
