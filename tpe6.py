@@ -268,3 +268,8 @@ if __name__ == '__main__':
             continue
 
     print(f'За 10 секунд експеремент був адекватним {adekvat} разів з {cnt}')
+        result.append(coef_2)
+    if res1 >= 3:
+        break
+
+print("Незначущі коефіцієнти регресії pf 3 сек: " + str(len(result)))
